@@ -12,7 +12,7 @@ foreach ($computer in $computers) {
     #CPU
     Get-WmiObject  win32_processor -ComputerName $computer  -Credential $credential | Select-Object Name,processortype, Numberofcores, numberoflogicalprocessors | Export-csv -Path "output\($computer)_Cpu.csv"
     #ram
-    Get-WmiObject  win32_physicalmemory-ComputerName $computer  -Credential $credential  | Select-Object devicelocator , capacity,manufacturer, partnumber, serialnumber | export-csv -Path "output\($computer)_Ram.csv"
+    Get-WmiObject  win32_physicalmemory -ComputerName $computer  -Credential $credential  | Select-Object devicelocator , capacity,manufacturer, partnumber, serialnumber | export-csv -Path "output\($computer)_Ram.csv"
     #HDD
     Get-WmiObject Win32_DiskDrive -ComputerName $computer  -Credential $credential | Select-Object Manufacturer, Model,SerialNumber,Size | Export-Csv -Path "output\($computer)_hdd.csv"
     #Logic disks
