@@ -1,0 +1,23 @@
+{
+    "user": {
+        "domain": "grupp04.lab",
+        "username": "Emil",
+        "password": "Test123"
+    },
+    "clients" : [
+        "Klient01",
+        "Klient02",
+        "Klient03"
+    ],
+    "settings": {
+        "bios": true,
+        "baseBord": true,
+        "proccessor": true,
+        "physical_memory": true,
+        "diskdrive": true,
+        "logicaldisk": true,
+        "windows_update": true,
+        "software": true,
+        "ip": true
+    }
+}
