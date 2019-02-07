@@ -97,16 +97,25 @@ foreach ($computer in $computers) {
     #ip
     if($config.settings.ip) {
         try 
-        {
-            Get-WmiObject win32_networkadapterconfiguration -ComputerName $computer  -Credential $credential -ErrorAction Stop | Select-Object ipaddress,defaultgateway,dnsdomain,dhcpenabled | Export-Csv -Path "output\($computer)_IP.csv"
-        }
+            {   
+                $path = "output/($computer)_IP.csv"
+                if(test-path -Path $path -eq false){
+                    New-Item -Path "output/" -Name "($computer)_IP.csv" -ItemType "file"
+                }
+                $data = Get-WmiObject win32_networkadapterconfiguration -ComputerName $computer  -Credential $credential -ErrorAction Stop 
+                foreach($item in $data){
+                    "{0},{1}" -f $data[$i.ipaddress],$data[$i.defaultgateway] | add-content -Path "output\($computer)_IP.csv"
+                }
+            }
         catch 
-        {
-            write-host 'Faield to fetch IP'
-        }
+            {
+                write-host 'failed to fetch ip'
+            }
+    
+    
     }
+    #-computer COMPUTERNAME
 
     write-host $computer ' Done'
-
 }
 #-computer COMPUTERNAME
