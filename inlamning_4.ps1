@@ -26,7 +26,7 @@ write-host "Looking for needed files, I will create the files i don't find that 
 if ($config.settings.bios) {
     if ((test-path -Path "output/Bios.csv") -eq $false) {
         New-Item -Path "output/" -Name "Bios.csv" -ItemType "file"
-        '"{0}";"{1}";"{2}";"{3}"' -f '"Computer name"', '"Version"', '"Manufacturer"', '"Releasedate"' | add-content -Path "output\Bios.csv"         
+        '"{0}";"{1}";"{2}";"{3}"' -f '"Computer name"', 'Version', '"Manufacturer"', '"Releasedate"' | add-content -Path "output\Bios.csv"         
     }
 }
 
@@ -34,7 +34,7 @@ if ($config.settings.bios) {
 if ($config.settings.baseBord) {
     if ((test-path -Path "output/Mboard.csv") -eq $false) {
         New-Item -Path "output/" -Name "Mboard.csv" -ItemType "file"
-        '"{0}";"{1}";"{2}";"{3}"' -f '"Computer name"',  '"Manufacturer"', '"Product"' , '"SerialNumber"' | add-content -Path "output\Mboard.csv"         
+        '"{0}";"{1}";"{2}";"{3}"' -f 'Computer name',  'Manufacturer', 'Product' , 'SerialNumber' | add-content -Path "output\Mboard.csv"         
     }
 }
 
@@ -42,7 +42,7 @@ if ($config.settings.baseBord) {
 if ($config.settings.proccessor) {
     if ((test-path -Path "output/Cpu.csv") -eq $false) {
         New-Item -Path "output/" -Name "Cpu.csv" -ItemType "file"
-        '"{0}";"{1}";"{2}";"{3}";"{4}"' -f '"Computer name"',  '"Name"', '"processortype"' , '"Numberofcores"', '"numberoflogicalprocessors"' | add-content -Path "output\Cpu.csv"         
+        '"{0}";"{1}";"{2}";"{3}";"{4}"' -f 'Computer name',  'Name', 'processortype' , 'Numberofcores', 'numberoflogicalprocessors' | add-content -Path "output\Cpu.csv"         
     }
 }
 #Ram
@@ -50,7 +50,7 @@ if ($config.settings.proccessor) {
 if ($config.settings.physical_memory) {
     if ((test-path -Path "output/Ram.csv") -eq $false) {
         New-Item -Path "output/" -Name "Ram.csv" -ItemType "file"
-        '"{0}";"{1}";"{2}";"{3}";"{4}";"{5}"' -f '"Computer name"',  '"devicelocator"', '"capacity"' , '"manufacturer"', '"partnumber"' , '"serialnumber"' | add-content -Path "output\Ram.csv"         
+        '"{0}";"{1}";"{2}";"{3}";"{4}";"{5}"' -f 'Computer name',  'devicelocator', 'capacity' , 'manufacturer', 'partnumber' , 'serialnumber' | add-content -Path "output\Ram.csv"         
     }
 }
 
@@ -58,7 +58,7 @@ if ($config.settings.physical_memory) {
 if ($config.settings.diskdrive) {
     if ((test-path -Path "output/Hdd.csv") -eq $false) {
         New-Item -Path "output/" -Name "Hdd.csv" -ItemType "file"
-        '"{0}";"{1}";"{2}";"{3}";"{4}"' -f '"Computer name"',  '"Manufacturer"', '"Model"' , '"SerialNumber"', '"Size"' | add-content -Path "output\Hdd.csv"         
+        '"{0}";"{1}";"{2}";"{3}";"{4}"' -f 'Computer name',  'Manufacturer', 'Model' , 'SerialNumber', 'Size' | add-content -Path "output\Hdd.csv"         
     }
 }
 
@@ -66,7 +66,7 @@ if ($config.settings.diskdrive) {
 if ($config.settings.logicaldisk) {
     if ((test-path -Path "output/Hddlogic.csv") -eq $false) {
         New-Item -Path "output/" -Name "Hddlogic.csv" -ItemType "file"
-        '"{0}";"{1}";"{2}";"{3}";"{4}"' -f '"Computer name"',  '"DeviceID"', '"Filesystem"' , '"size"', '"freespace"' | add-content -Path "output\Hddlogic.csv"         
+        '"{0}";"{1}";"{2}";"{3}";"{4}"' -f 'Computer name',  'DeviceID', 'Filesystem' , 'size', 'freespace' | add-content -Path "output\Hddlogic.csv"         
     }
 }
 
@@ -74,7 +74,7 @@ if ($config.settings.logicaldisk) {
 if ($config.settings.windows_update) {
     if ((test-path -Path "output/Wupdate.csv") -eq $false) {
         New-Item -Path "output/" -Name "Wupdate.csv" -ItemType "file"
-        '"{0}";"{1}";"{2}"' -f '"Computer name"',  '"description"', '"hotfixid"' | add-content -Path "output\Wupdate.csv"         
+        '"{0}";"{1}";"{2}"' -f 'Computer name',  'description', 'hotfixid' | add-content -Path "output\Wupdate.csv"         
     }
 }
 
@@ -82,7 +82,7 @@ if ($config.settings.windows_update) {
 if ($config.settings.software) {
     if ((test-path -Path "output/Software.csv") -eq $false) {
         New-Item -Path "output/" -Name "Software.csv" -ItemType "file"
-        '"{0}";"{1}"' -f '"Computer name"',  '"name"'  | add-content -Path "output\Software.csv"         
+        '"{0}";"{1}"' -f 'Computer name',  'name'  | add-content -Path "output\Software.csv"         
     }
 }
 
@@ -90,7 +90,7 @@ if ($config.settings.software) {
 if ($config.settings.ip) {
     if ((test-path -Path "output/IP.csv") -eq $false) {
         New-Item -Path "output/" -Name "IP.csv" -ItemType "file"
-        '"{0}";"{1}";"{2}";"{3}";"{4}"' -f '"Computer"', '"IP Adrress"', '"Default IP Gateway"', '"DNS Domain"', '"DHCP Enabled"' | add-content -Path "output\IP.csv"         
+        '"{0}";"{1}";"{2}";"{3}";"{4}"' -f 'Computer', 'IP Adrress', 'Default IP Gateway', 'DNS Domain', 'DHCP Enabled' | add-content -Path "output\IP.csv"         
     }
 }
 #end see all files
