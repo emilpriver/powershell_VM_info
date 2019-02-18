@@ -7,3 +7,20 @@ Before you run the script, please check the information under user. Add the righ
 INFORMATION
 The script will get all info and print it to the output mapp.
 If any error will happen, the script will print the error to log file. If file dont exists then the file will be created
+
+HOW THIS SCRIPT CAN BE USED
+This script can be used by an domain admin to fetch informatin about all computers. For exempel fetch alla softwares that computers on the domain have installed.
+
+EXAMPLE OF OUT DATA TO CSV FILES
+In this exempel we fetch softwars:
+Computer Name, Name
+Klient01, Spotify
+Klient01, Chrome
+Klient01, Edge
+Klient01, Steam
+Klient02, Spotify
+Klient02, Chrome
+Klient02, Edge
+Klient02, Visual Studio Code
+
+In this case Computer Name are the name of the computer the script fetch information from. and Name are the name of the software.
