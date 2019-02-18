@@ -7,7 +7,9 @@
     "clients" : [
         "Klient01",
         "Klient02",
-        "Klient03"
+        "Klient05",
+        "DC01",
+        "HV01"
     ],
     "settings": {
         "bios": true,
